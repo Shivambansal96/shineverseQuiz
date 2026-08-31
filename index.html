@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ShineVerse Programming Quiz Hub</title>
+    <meta name="description" content="Test and elevate your software engineering skills with ShineVerse Python and Java Mastery Quizzes." />
+
+    <link rel="stylesheet" href="Java Quiz/style.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+    <style>
+        .hub-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+            margin: 30px 0;
+        }
+
+        .quiz-card {
+            background: rgba(15, 23, 42, 0.8);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(20px);
+        }
+
+        .quiz-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 35px rgba(0, 212, 255, 0.25);
+            border-color: var(--primary);
+        }
+
+        .quiz-card-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+
+        .quiz-icon-badge {
+            width: 55px;
+            height: 55px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+        }
+
+        .icon-python {
+            background: rgba(56, 189, 248, 0.15);
+            color: #38bdf8;
+            border: 1px solid rgba(56, 189, 248, 0.4);
+        }
+
+        .icon-java {
+            background: rgba(245, 158, 11, 0.15);
+            color: #f59e0b;
+            border: 1px solid rgba(245, 158, 11, 0.4);
+        }
+
+        .quiz-card-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .quiz-card-desc {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        .quiz-features-list {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 25px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .quiz-features-list li {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .quiz-features-list li i {
+            color: var(--success);
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="particlesContainer"></div>
+
+    <a href="https://shivambansal.co.in" target="_blank" class="footer-branding">
+        <img src="Java Quiz/ShineVerseLogo.png" alt="ShineVerse Logo" height="75px" width="75px" />
+    </a>
+
+    <div class="container">
+        <header data-aos="fade-down">
+            <div class="logo">
+                <a href="https://shivambansal.co.in" target="_blank">
+                    <img src="Java Quiz/ShineVerse.png" alt="ShineVerse Logo" />
+                </a>
+            </div>
+            <h1>ShineVerse Quiz Hub</h1>
+            <p class="subtitle">Select your programming track and assess your mastery with interactive MCQ tests</p>
+        </header>
+
+        <div class="hub-grid">
+            <!-- Python Quiz Card -->
+            <div class="quiz-card" data-aos="fade-right" data-aos-delay="100">
+                <div>
+                    <div class="quiz-card-header">
+                        <div class="quiz-icon-badge icon-python">
+                            <i class="fab fa-python"></i>
+                        </div>
+                        <div>
+                            <div class="quiz-card-title">Python MCQ Test</div>
+                            <span class="badge badge-category">30 Questions • Core &amp; OOP</span>
+                        </div>
+                    </div>
+                    <p class="quiz-card-desc">
+                        Test your Python proficiency covering syntax, variables, lists, dictionaries, tuples, functions, file handling, and OOP design.
+                    </p>
+                    <ul class="quiz-features-list">
+                        <li><i class="fas fa-check"></i> Python Basics &amp; Built-in Types</li>
+                        <li><i class="fas fa-check"></i> Data Structures &amp; Collections</li>
+                        <li><i class="fas fa-check"></i> Functions &amp; Exception Handling</li>
+                        <li><i class="fas fa-check"></i> OOP Blueprint &amp; Inheritance</li>
+                    </ul>
+                </div>
+                <a href="Python Quiz/index.html" class="btn btn-primary btn-lg" style="width: 100%;">
+                    <i class="fas fa-play"></i> Start Python Quiz
+                </a>
+            </div>
+
+            <!-- Java Quiz Card -->
+            <div class="quiz-card" data-aos="fade-left" data-aos-delay="200">
+                <div>
+                    <div class="quiz-card-header">
+                        <div class="quiz-icon-badge icon-java">
+                            <i class="fab fa-java"></i>
+                        </div>
+                        <div>
+                            <div class="quiz-card-title">Java MCQ Test</div>
+                            <span class="badge badge-medium">30 Questions • All Levels</span>
+                        </div>
+                    </div>
+                    <p class="quiz-card-desc">
+                        Deep dive into Java fundamentals, JVM memory, runtime polymorphism, and an extensive deep-dive into the Collections Framework.
+                    </p>
+                    <ul class="quiz-features-list">
+                        <li><i class="fas fa-check"></i> JVM Architecture &amp; Type Casting</li>
+                        <li><i class="fas fa-check"></i> OOP, Polymorphism &amp; Interfaces</li>
+                        <li><i class="fas fa-check"></i> Strings, Memory &amp; Exceptions</li>
+                        <li><i class="fas fa-check"></i> List, Set, Map, Queue &amp; SkipLists</li>
+                    </ul>
+                </div>
+                <a href="Java Quiz/index.html" class="btn btn-primary btn-lg" style="width: 100%;">
+                    <i class="fas fa-play"></i> Start Java Quiz
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Background particles
+        function createParticles() {
+            const container = document.getElementById("particlesContainer");
+            if (!container) return;
+            for (let i = 0; i < 25; i++) {
+                const particle = document.createElement("div");
+                particle.className = "particle";
+                particle.style.left = Math.random() * 100 + "%";
+                particle.style.animationDelay = Math.random() * 20 + "s";
+                particle.style.animationDuration = 15 + Math.random() * 20 + "s";
+                particle.style.width = particle.style.height = (Math.random() * 3 + 1.5) + "px";
+                container.appendChild(particle);
+            }
+        }
+        document.addEventListener("DOMContentLoaded", () => {
+            createParticles();
+            if (typeof AOS !== "undefined") {
+                AOS.init({ duration: 800, once: true });
+            }
+        });
+    </script>
+</body>
+
+</html>

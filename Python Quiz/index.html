@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Python MCQ Test - ShineVerse</title>
+    <meta name="description" content="Master Python with ShineVerse 30 comprehensive multiple-choice questions covering Python Fundamentals, Control Flow, OOP, and Core Python." />
+
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+</head>
+
+<body>
+    <div id="particlesContainer"></div>
+
+    <!-- Navigation Bar & Quiz Switcher -->
+    <nav class="top-nav" data-aos="fade-down">
+        <a href="https://shivambansal.co.in" target="_blank" class="nav-brand-link">
+            <img src="ShineVerseLogo.png" alt="ShineVerse Logo" class="nav-brand-img" />
+            <span>ShineVerse Quiz Hub</span>
+        </a>
+        <div class="quiz-switcher">
+            <a href="index.html" class="switch-tab active">
+                <i class="fab fa-python" style="color: #38bdf8;"></i> Python Quiz
+            </a>
+            <a href="../Java Quiz/index.html" class="switch-tab">
+                <i class="fab fa-java" style="color: #f59e0b;"></i> Java Quiz
+            </a>
+        </div>
+    </nav>
+
+    <!-- Floating Footer Branding -->
+    <a href="https://shivambansal.co.in" target="_blank" class="footer-branding">
+        <img src="ShineVerseLogo.png" alt="ShineVerse Logo" height="70px" width="70px" />
+    </a>
+
+    <div class="container">
+        <!-- Main Header -->
+        <header data-aos="fade-down">
+            <div class="logo">
+                <a href="https://shivambansal.co.in" target="_blank">
+                    <img src="ShineVerse.png" alt="ShineVerse Logo" />
+                </a>
+            </div>
+            <h1>Master Python Programming</h1>
+            <p class="subtitle" id="subtitle">Test your Python Fundamentals, OOP &amp; Core mastery</p>
+        </header>
+
+        <!-- Start Screen -->
+        <section id="startScreen" class="card screen-enter" data-aos="fade-up">
+            <div class="stats">
+                <div class="stat" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="number" id="questionCountStat">30</div>
+                    <div class="label">Questions</div>
+                </div>
+                <div class="stat" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="number">☕</div>
+                    <div class="label">Python 3.x Focus</div>
+                </div>
+                <div class="stat" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="number">⚡</div>
+                    <div class="label">Instant Feedback</div>
+                </div>
+            </div>
+
+            <!-- Curriculum Overview -->
+            <div class="curriculum-preview" data-aos="fade-up" data-aos-delay="350">
+                <div class="curriculum-title">
+                    <i class="fas fa-layer-group"></i> 30-Question Curriculum Breakdown:
+                </div>
+                <div class="curriculum-grid">
+                    <div class="curriculum-item"><i class="fas fa-check-circle"></i> Q1–Q5: Basics & Variables</div>
+                    <div class="curriculum-item"><i class="fas fa-check-circle"></i> Q6–Q10: Operators & Control Flow</div>
+                    <div class="curriculum-item"><i class="fas fa-check-circle"></i> Q11–Q17: Data Structures (Lists, Sets, Dicts)</div>
+                    <div class="curriculum-item"><i class="fas fa-check-circle"></i> Q18–Q22: Functions & File Handling</div>
+                    <div class="curriculum-item"><i class="fas fa-check-circle"></i> Q23–Q30: OOP & Exception Handling</div>
+                </div>
+            </div>
+
+            <div class="center">
+                <button class="btn btn-primary btn-lg" id="startBtn" data-aos="fade-up" data-aos-delay="400">
+                    <i class="fas fa-play"></i> Start Python Quiz
+                </button>
+            </div>
+        </section>
+
+        <!-- Quiz Screen -->
+        <section id="quizScreen" class="card hidden screen-enter">
+            <div class="quiz-header">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+
+                <div class="progress-text">
+                    <span id="questionCounter">Question 1 of 30</span>
+                    <span id="answeredCounter">0 of 30 answered</span>
+                </div>
+
+                <div class="badge-group">
+                    <span class="badge badge-category" id="badgeCategory">Python Fundamentals</span>
+                    <span class="badge badge-easy" id="badgeDifficulty">Easy</span>
+                    <button class="btn btn-outline" id="hintBtn" style="margin-left: auto;" title="Click or press 'H' for a hint">
+                        <i class="fas fa-lightbulb"></i> Hint
+                    </button>
+                </div>
+
+                <div id="hintContainer" class="hidden"></div>
+            </div>
+
+            <div class="quiz-content">
+                <div class="question-text-wrapper" id="questionContent"></div>
+                <div class="options" id="optionsContainer"></div>
+            </div>
+
+            <div class="nav">
+                <button class="btn btn-secondary" id="prevBtn">
+                    <i class="fas fa-chevron-left"></i> Previous
+                </button>
+                <div class="nav-group">
+                    <button class="btn btn-primary" id="nextBtn">
+                        Next <i class="fas fa-chevron-right"></i>
+                    </button>
+                    <button class="btn btn-success hidden" id="submitBtn">
+                        <i class="fas fa-check-circle"></i> Submit Python Quiz
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Results Screen -->
+        <section id="resultScreen" class="card hidden center-text screen-enter">
+            <div class="result-header" data-aos="zoom-in">
+                <div class="result-emoji" id="resultEmoji">🎉</div>
+                <h2 class="result-title" id="resultTitle">Outstanding Mastery!</h2>
+                <div id="performanceBadge" class="feedback-badge perf-excellent">Performance: Excellent</div>
+                <p class="feedback-message" id="feedbackMessage">You have demonstrated exceptional Python skills.</p>
+            </div>
+
+            <!-- Glowing Circular Score Progress -->
+            <div class="result-stats" data-aos="fade-up" data-aos-delay="200">
+                <div class="score-circle">
+                    <svg viewBox="0 0 100 100">
+                        <defs>
+                            <linearGradient id="circleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#00d4ff;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#d946ef;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <circle cx="50" cy="50" r="45" class="progress-circle-bg"></circle>
+                        <circle cx="50" cy="50" r="45" class="progress-circle-fill" id="progressCircle"></circle>
+                    </svg>
+                    <div class="score-text">
+                        <span class="score-percentage" id="finalPercentage">0%</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Metric Summary Grid -->
+            <div class="result-details" data-aos="fade-up" data-aos-delay="300">
+                <h3 id="resultScore">You scored 0 / 30</h3>
+
+                <div class="stats-grid">
+                    <div class="detail-stat">
+                        <div class="detail-label">Correct Answers</div>
+                        <div class="detail-value" id="correctCount" style="color: var(--success);">0</div>
+                    </div>
+                    <div class="detail-stat">
+                        <div class="detail-label">Wrong Answers</div>
+                        <div class="detail-value" id="incorrectCount" style="color: var(--danger);">0</div>
+                    </div>
+                    <div class="detail-stat">
+                        <div class="detail-label">Accuracy Rate</div>
+                        <div class="detail-value" id="accuracyRate" style="color: var(--primary);">0%</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Result Actions -->
+            <div class="result-actions" data-aos="fade-up" data-aos-delay="350">
+                <a href="../Java Quiz/index.html" class="btn btn-secondary">
+                    <i class="fab fa-java"></i> Try Java Quiz
+                </a>
+            </div>
+
+            <!-- Answer Review Section -->
+            <div class="review-container" id="reviewSection">
+                <div class="review-header">
+                    <div class="review-title">
+                        <i class="fas fa-clipboard-check" style="color: var(--primary);"></i> Detailed Answer Review
+                    </div>
+                    <div class="review-filter-group">
+                        <button class="filter-btn active" data-filter="all">All (30)</button>
+                        <button class="filter-btn" data-filter="correct">Correct</button>
+                        <button class="filter-btn" data-filter="incorrect">Incorrect</button>
+                    </div>
+                </div>
+
+                <div class="review-list" id="reviewList"></div>
+            </div>
+        </section>
+
+        <!-- Blocked Screen (for saved state) -->
+        <section id="blockedScreen" class="card hidden center-text screen-enter">
+            <div class="blocked-content" data-aos="zoom-in">
+                <div class="blocked-emoji">🔒</div>
+                <h2 class="blocked-title">Python Quiz Completed!</h2>
+                <p class="blocked-message">You have already completed this session. Your score has been securely saved.</p>
+
+                <div class="saved-score-display" data-aos="fade-up" data-aos-delay="200">
+                    <p class="saved-score-label">Your Saved Score:</p>
+                    <p class="saved-score" id="savedScore">0%</p>
+                </div>
+
+                <div class="blocked-actions">
+                    <a href="../Java Quiz/index.html" class="btn btn-secondary">
+                        <i class="fab fa-java"></i> Go to Java Quiz
+                    </a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Scripts -->
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</body>
+
+</html>
