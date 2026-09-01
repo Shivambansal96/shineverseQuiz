@@ -4,7 +4,6 @@
 
   <img src="https://img.shields.io/badge/Status-Live-brightgreen" alt="Live status" />
   <img src="https://img.shields.io/badge/Language-HTML%2C%20CSS%2C%20JS-orange" alt="Languages" />
-  <img src="https://img.shields.io/badge/Quiz-Type-MCQ-blue" alt="Quiz type" />
   <img src="https://img.shields.io/badge/Frontend-Responsive-9b59b6" alt="Responsive" />
 
 </div>
